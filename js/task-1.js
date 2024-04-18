@@ -4,10 +4,10 @@
 
 // const string = 'abcde';
 // if (string[1] === 'b') {
-//   console.log('Так');
-// } else {
+//    console.log('Так');
+//  } else {
 //   console.log('Ні');
-// }
+//   }
 
 // Оголоси функцію canRegisterOnSite(age, hasAccepttedTerms),
 // яка перевіряє, чи може користувач зареєструватись на сайті.
