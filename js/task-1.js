@@ -175,3 +175,19 @@
 // }
 // console.log(getCommonElements([1, 2, 3], [2, 4])); // [2]
 // console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); // [12, 27, 3]
+// ==========================================================
+// ============================================================
+// Доповни код функції calculateTotalPrice(order) так,
+// щоб вона повертала загальну суму чисел в масиві order.
+// Використай цикл for...of для перебору масиву.
+
+// function calculateTotalPrice(order) {
+//   let sum = 0;
+//   for (const elem of order) {
+//     sum += elem;
+//   }
+//   return sum;
+// }
+
+// console.log(calculateTotalPrice([12, 85, 37, 4])); // 138
+// console.log(calculateTotalPrice([164, 48, 291])); // 503
