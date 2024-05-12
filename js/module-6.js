@@ -44,65 +44,66 @@ name, email и phone. Затем реализуйте класс ContactBook, к
 список контактов и предоставлять методы для добавления, удаления и поиска
 контактов.*/
 
-// class Contact {
-//   constructor(name, email, phone) {
-//     this.name = name;
-//     this.email = email;
-//     this.phone = phone;
-//   }
-//   toString() {
-//     return `Name: ${this.name}\nEmail: ${this.email}\nPhone: ${this.phone}`;
-//   }
-// }
+class Contact {
+  constructor(name, email, phone) {
+    this.name = name;
+    this.email = email;
+    this.phone = phone;
+  }
+  toString() {
+    return `Name: ${this.name}\nEmail: ${this.email}\nPhone: ${this.phone}`;
+  }
+}
 
-// class ContactBook extends Array {
-//   addContact(contact) {
-//     this.push(contact);
-//   }
+class ContactBook extends Array {
+  addContact(contact) {
+    this.push(contact);
+  }
 
-//   allContacts() {
-//     if (this.length === 0) {
-//       console.log('Contact book is empty');
-//     } else {
-//       console.log('All contacts:');
-//       this.forEach(contact => console.log(contact.toString()));
-//     }
-//   }
+  allContacts() {
+    if (this.length === 0) {
+      console.log('Contact book is empty');
+    } else {
+      console.log('All contacts:');
+      this.forEach(contact => console.log(contact.toString()));
+    }
+  }
 
-//   deleteContact(name) {
-//     const indexName = this.indexOf(contact => contact.name === name);
-//     if (indexName !== -1) {
-//       this.splice(indexName, 1);
-//       console.log(`${name} has been deleted from contacts`);
-//     } else {
-//       console.log(`Contact ${name} not found`);
-//     }
-//   }
+  deleteContact(name) {
+    const indexName = this.findIndex(contact => contact.name === name);
+    console.log(this);
+    if (indexName !== -1) {
+      this.splice(indexName, 1);
+      console.log(`${name} has been deleted from contacts`);
+    } else {
+      console.log(`Contact ${name} not found`);
+    }
+  }
 
-//   searchContact(name) {
-//     const contact = this.find(contact => contact.name === name);
-//     if (contact) {
-//       console.log(contact.toString());
-//     } else {
-//       console.log(`Contact ${name} not found`);
-//     }
-//   }
-// }
+  searchContact(name) {
+    const contact = this.find(contact => contact.name === name);
+    if (contact) {
+      console.log(contact.toString());
+    } else {
+      console.log(`Contact ${name} not found`);
+    }
+  }
+}
 
-// const contact1 = new Contact('Alex', 'alexwww@gmail.com', '0984536465');
-// const contact2 = new Contact('Anna', 'annafhfh@gmail.com', '0673425167');
-// const contact3 = new Contact('Nina', 'ninafhfh@gmail.com', '0673425557');
+const contact1 = new Contact('Alex', 'alexwww@gmail.com', '0984536465');
+const contact2 = new Contact('Anna', 'annafhfh@gmail.com', '0673425167');
+const contact3 = new Contact('Nina', 'ninafhfh@gmail.com', '0673425557');
 
-// const contactBook = new ContactBook();
-// contactBook.addContact(contact1);
-// contactBook.addContact(contact2);
-// contactBook.addContact(contact3);
+const contactBook = new ContactBook();
+contactBook.addContact(contact1);
+contactBook.addContact(contact2);
+contactBook.addContact(contact3);
 
-// contactBook.searchContact('Alex');
-// contactBook.searchContact('Maria');
-// contactBook.allContacts();
-// contactBook.deleteContact('Nina');
-// contactBook.deleteContact('Anna');
+contactBook.searchContact('Alex');
+contactBook.searchContact('Maria');
+contactBook.allContacts();
+contactBook.deleteContact('Nina');
+contactBook.deleteContact('Anna');
 
 /*===========================================================
 3
