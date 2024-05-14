@@ -44,66 +44,66 @@ name, email и phone. Затем реализуйте класс ContactBook, к
 список контактов и предоставлять методы для добавления, удаления и поиска
 контактов.*/
 
-class Contact {
-  constructor(name, email, phone) {
-    this.name = name;
-    this.email = email;
-    this.phone = phone;
-  }
-  toString() {
-    return `Name: ${this.name}\nEmail: ${this.email}\nPhone: ${this.phone}`;
-  }
-}
+// class Contact {
+//   constructor(name, email, phone) {
+//     this.name = name;
+//     this.email = email;
+//     this.phone = phone;
+//   }
+//   toString() {
+//     return `Name: ${this.name}\nEmail: ${this.email}\nPhone: ${this.phone}`;
+//   }
+// }
 
-class ContactBook extends Array {
-  addContact(contact) {
-    this.push(contact);
-  }
+// class ContactBook extends Array {
+//   addContact(contact) {
+//     this.push(contact);
+//   }
 
-  allContacts() {
-    if (this.length === 0) {
-      console.log('Contact book is empty');
-    } else {
-      console.log('All contacts:');
-      this.forEach(contact => console.log(contact.toString()));
-    }
-  }
+//   allContacts() {
+//     if (this.length === 0) {
+//       console.log('Contact book is empty');
+//     } else {
+//       console.log('All contacts:');
+//       this.forEach(contact => console.log(contact.toString()));
+//     }
+//   }
 
-  deleteContact(name) {
-    const indexName = this.findIndex(contact => contact.name === name);
-    console.log(this);
-    if (indexName !== -1) {
-      this.splice(indexName, 1);
-      console.log(`${name} has been deleted from contacts`);
-    } else {
-      console.log(`Contact ${name} not found`);
-    }
-  }
+//   deleteContact(name) {
+//     const indexName = this.findIndex(contact => contact.name === name);
+//     console.log(this);
+//     if (indexName !== -1) {
+//       this.splice(indexName, 1);
+//       console.log(`${name} has been deleted from contacts`);
+//     } else {
+//       console.log(`Contact ${name} not found`);
+//     }
+//   }
 
-  searchContact(name) {
-    const contact = this.find(contact => contact.name === name);
-    if (contact) {
-      console.log(contact.toString());
-    } else {
-      console.log(`Contact ${name} not found`);
-    }
-  }
-}
+//   searchContact(name) {
+//     const contact = this.find(contact => contact.name === name);
+//     if (contact) {
+//       console.log(contact.toString());
+//     } else {
+//       console.log(`Contact ${name} not found`);
+//     }
+//   }
+// }
 
-const contact1 = new Contact('Alex', 'alexwww@gmail.com', '0984536465');
-const contact2 = new Contact('Anna', 'annafhfh@gmail.com', '0673425167');
-const contact3 = new Contact('Nina', 'ninafhfh@gmail.com', '0673425557');
+// const contact1 = new Contact('Alex', 'alexwww@gmail.com', '0984536465');
+// const contact2 = new Contact('Anna', 'annafhfh@gmail.com', '0673425167');
+// const contact3 = new Contact('Nina', 'ninafhfh@gmail.com', '0673425557');
 
-const contactBook = new ContactBook();
-contactBook.addContact(contact1);
-contactBook.addContact(contact2);
-contactBook.addContact(contact3);
+// const contactBook = new ContactBook();
+// contactBook.addContact(contact1);
+// contactBook.addContact(contact2);
+// contactBook.addContact(contact3);
 
-contactBook.searchContact('Alex');
-contactBook.searchContact('Maria');
-contactBook.allContacts();
-contactBook.deleteContact('Nina');
-contactBook.deleteContact('Anna');
+// contactBook.searchContact('Alex');
+// contactBook.searchContact('Maria');
+// contactBook.allContacts();
+// contactBook.deleteContact('Nina');
+// contactBook.deleteContact('Anna');
 
 /*===========================================================
 3
@@ -140,14 +140,117 @@ description и completed. Затем реализуйте класс ToDoList, �
 список задач и методы для добавления новых задач, отметки задачи как выполненной
 и вывода списка задач.*/
 
+// class Task {
+//   constructor(title, description) {
+//     this.title = title;
+//     this.description = description;
+//     this.completed = false;
+//   }
+
+//   markAsCompleted() {
+//     this.completed = true;
+//   }
+
+//   toString() {
+//     const status = this.completed ? 'Completed' : 'Not completed';
+//     return `Title: ${this.title}\nDescription: ${this.description}\nStatus: ${status}`;
+//   }
+// }
+
+// class ToDoList {
+//   constructor() {
+//     this.tasks = [];
+//   }
+
+//   addTask(task) {
+//     this.tasks.push(task);
+//   }
+
+//   markTaskAsCompleted(index) {
+//     if (index >= 0 && index < this.tasks.length) {
+//       this.tasks[index].markAsCompleted();
+//     }
+//   }
+
+//   displayTasks() {
+//     if (this.tasks.length > 0) {
+//       console.log('Tasks:');
+//       this.tasks.forEach((task, index) => {
+//         console.log(`Task ${index + 1}`);
+//         console.log(task.toString());
+//         console.log();
+//       });
+//     } else {
+//       console.log('No tasks in your To Do List');
+//     }
+//   }
+// }
+
+// const task1 = new Task(
+//   'Update your first file in JS project',
+//   'Commit your file in VS Code',
+// );
+// const task2 = new Task('Go for a rest', 'Take a new task');
+
+// const todoList = new ToDoList();
+
+// todoList.addTask(task1);
+// todoList.addTask(task2);
+
+// console.log('Show me to do list:');
+// todoList.displayTasks();
+
+// todoList.markTaskAsCompleted(0);
+
+// console.log('New to do list:');
+// todoList.displayTasks();
 /*===========================================================
 5
 ===========================================================*/
 
 /*Класс BankAccount: Реализуйте класс BankAccount, который будет представлять
 банковский счет с методами для депозита, снятия средств и проверки баланса.
-Учтите обработку возможных ошибок (например, недостаточно средств)./*
+Учтите обработку возможных ошибок (например, недостаточно средств).*/
 
+// class BankAccount {
+//   constructor(balance = 0) {
+//     this.balance = balance;
+//   }
+
+//   deposit(amount) {
+//     if (amount > 0) {
+//       this.balance += amount;
+//       console.log(`Deposit ${amount} into the account`);
+//     } else {
+//       console.log('Error');
+//     }
+//   }
+
+//   withdraw(amount) {
+//     if (amount > 0) {
+//       if (amount <= this.balance) {
+//         this.balance -= amount;
+//         console.log(`You is withdraw ${amount} from you account`);
+//       } else {
+//         console.log('Insufficient funds');
+//       }
+//     } else {
+//       console.log('Error');
+//     }
+//   }
+
+//   checkBalance() {
+//     console.log(`Ballance in you account: ${this.balance}`);
+//   }
+// }
+
+// const account = new BankAccount(1000);
+
+// account.deposit(500);
+// account.withdraw(300);
+// account.checkBalance();
+
+// account.withdraw(2000);
 /*===========================================================
 6
 ===========================================================*/
