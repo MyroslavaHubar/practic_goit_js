@@ -260,6 +260,75 @@ title, author и ISBN. Затем реализуйте класс LibraryCatalog
 хранить список книг в библиотеке и предоставлять методы для добавления новых
 книг, поиска книг по автору и ISBN, а также вывода списка всех книг.*/
 
+// class Book {
+//   constructor(title, author, ISBN) {
+//     this.title = title;
+//     this.author = author;
+//     this.isbn = ISBN;
+//   }
+
+//   toString() {
+//     return `Title: ${this.title}\nAuthor: ${this.author}\nIIBN: ${this.isbn}`;
+//   }
+// }
+
+// class LibraryCatalog {
+//   constructor() {
+//     this.books = [];
+//   }
+
+//   addBook(book) {
+//     this.books.push(book);
+//   }
+
+//   searchBookByAuthor(author) {
+//     return this.books.filter(book => book.author === author);
+//   }
+
+//   searchBookByISBN(isbn) {
+//     return this.books.filter(book => book.isbn === isbn);
+//   }
+
+//   displayAllBooks() {
+//     if (this.books.length === 0) {
+//       console.log('No books in the library catalog');
+//     } else {
+//       this.books.forEach((book, index) => {
+//         console.log(`${index + 1}. ${book.toString()} `);
+//       });
+//     }
+//   }
+// }
+
+// const library = new LibraryCatalog();
+
+// const book1 = new Book(
+//   'JavaScript для дітей. Веселий вступ до програмування',
+//   'Нік Морган',
+//   '1234567890',
+// );
+// const book2 = new Book(
+//   'Современный учебник JavaScript',
+//   'Илья Кантор',
+//   '12386747890',
+// );
+// const book3 = new Book(
+//   'JavaScript. Подробное руководство',
+//   'Флэнаган Дэвид',
+//   '12345674444',
+// );
+
+// library.addBook(book1);
+// library.addBook(book2);
+// library.addBook(book3);
+
+// library.displayAllBooks();
+
+// const author = library.searchBookByAuthor('Илья Кантор');
+// console.log(author.toString());
+
+// const isbnBook = library.searchBookByISBN('12345674444');
+// console.log(isbnBook.toString());
 /*===========================================================
 7
 ===========================================================*/
@@ -296,14 +365,129 @@ name, price и quantity. Затем создайте класс ShoppingCart, к
 список товаров и предоставлять методы для добавления товаров, подсчета общей
 стоимости и вывода списка товаров.*/
 
+// class Product {
+//   constructor(name, price, quantity) {
+//     this.name = name;
+//     this.price = price;
+//     this.quantity = quantity;
+//   }
+
+//   getTotalPrice() {
+//     return this.price * this.quantity;
+//   }
+//   toString() {
+//     return `${this.name}:\nPrice: ${this.price}\nQuantity: ${this.quantity}`;
+//   }
+// }
+
+// class ShoppingCart {
+//   constructor() {
+//     this.products = [];
+//   }
+
+//   addNewProduct(product) {
+//     this.products.push(product);
+//   }
+
+//   getTotalPrice() {
+//     return this.products.reduce(
+//       (total, product) => total + product.getTotalPrice(),
+//       0,
+//     );
+//   }
+
+//   displayProducts() {
+//     if (this.products.length === 0) {
+//       console.log('Not product in shopping');
+//     } else {
+//       this.products.forEach((product, i) => {
+//         console.log(`${i + 1}. ${product.toString()}`);
+//       });
+//     }
+//   }
+// }
+
+// const shoppingCart = new ShoppingCart();
+
+// const product1 = new Product('Table', 500, 2);
+// const product2 = new Product('Lamp', 200, 4);
+// const product3 = new Product('Computer', 2500, 1);
+
+// shoppingCart.addNewProduct(product1);
+// shoppingCart.addNewProduct(product2);
+// shoppingCart.addNewProduct(product3);
+
+// shoppingCart.displayProducts();
+// console.log('Total price:', shoppingCart.getTotalPrice());
+
+/*===========================================================
+9
+===========================================================*/
+
 /*Класс SocialNetworkUser: Создайте класс SocialNetworkUser, представляющий
 пользователя социальной сети с полями username, friends (список друзей) и
 методами для добавления и удаления друзей, а также вывода списка друзей.*/
+
+// class SocialNetworkUser {
+//   constructor(username) {
+//     this.username = username;
+//     this.friends = [];
+//   }
+
+//   toString() {
+//     return `${this.username} have friends are: ${this.friends}`;
+//   }
+
+//   addNewFriends(friend) {
+//     if (!this.friends.includes(friend)) {
+//       return this.friends.push(friend);
+//     } else {
+//       console.log(`${friend.username} is already a friend of ${this.username}`);
+//     }
+//   }
+
+//   removeFriends(friend) {
+//     const index = this.friends.indexOf(friend);
+//     if (index !== -1) {
+//       this.friends.splice(index, 1);
+//     } else {
+//       console.log(`${this.username} is not a friend of ${this.username}`);
+//     }
+//   }
+
+//   displayFriends() {
+//     if (this.friends.length === 0) {
+//       console.log(`${this.username} has not a friends`);
+//     } else {
+//       this.friends.forEach(friend => console.log(friend.username));
+//     }
+//   }
+// }
+
+// const user1 = new SocialNetworkUser('Anna');
+// const user2 = new SocialNetworkUser('Ivan');
+// const user3 = new SocialNetworkUser('Kate');
+
+// user1.addNewFriends(user2);
+// user1.addNewFriends(user3);
+// user1.addNewFriends(user1);
+
+// user1.displayFriends();
+// user1.removeFriends(user3);
+// user1.displayFriends();
+
+/*===========================================================
+10
+===========================================================*/
 
 /*Класс MusicPlayer: Реализуйте класс Song для представления песни с полями title,
 artist и duration. Затем создайте класс MusicPlayer, который будет хранить
 список песен и предоставлять методы для добавления новых песен, воспроизведения,
 паузы и переключения между песнями.*/
+
+/*===========================================================
+11
+===========================================================*/
 
 /*Реалізуйте клас MyString, який буде мати наступні методи: метод reverse(), який
 параметром приймає рядок, а повертає її в перевернутому вигляді, метод
@@ -311,8 +495,16 @@ ucFirst(), який параметром приймає рядок, а пове�
 першу літеру заголовком і метод ucWords, який приймає рядок і робить заголовною
 першу літеру кожного слова цього рядка.*/
 
+/*===========================================================
+12
+===========================================================*/
+
 /* Реалізуйте клас Validator, який перевірятиме рядки. Наприклад, у нього буде
 метод isEmail параметром приймає рядок і перевіряє, чи є він коректним емейлом
 чи ні. Якщо є – повертає true, якщо не є – то false. Крім того, клас буде мати
 такі методи: метод isDomain для перевірки домену, метод isDate для перевірки
 дати і метод isPhone для перевірки телефону: */
+
+/*===========================================================
+nnnnn
+===========================================================*/
